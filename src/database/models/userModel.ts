@@ -1,11 +1,10 @@
-export class User {
-  email!: string;
-  password!: string;
+import mongoose from 'mongoose';
+const { Schema } = mongoose;
 
-  constructor(email: string, password: string) {
-    this.email;
-    this.password;
-  }
-}
+const userCredentials = new Schema({
+  email: { type: String, required: true, unique: true },
+  password: String
+});
 
-const user = new User('user01@gmail.com', '2121PassWord');
+export const Users = mongoose.model('Users', userCredentials);
+
