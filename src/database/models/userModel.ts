@@ -7,4 +7,3 @@ const userCredentials = new Schema({
 });
 
 export const Users = mongoose.model('Users', userCredentials);
-
